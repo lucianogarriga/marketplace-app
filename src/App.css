@@ -20,3 +20,16 @@ p{
   opacity: 85%;
   line-height: 35px;
 }
+a{
+  text-decoration: none;
+  color: unset;
+}
+a:hover{
+  color: unset;
+}
+ul{
+  list-style: none; 
+}
+section, footer{
+  
+}
