@@ -13,10 +13,19 @@ import Wallet from '../pages/Wallet'
 import NftDetails from '../pages/NftDetails'
 
 const Routers = () => {
-  return
+  return (
   <Routes>
     <Route path='/' element={<Navigate to='/home'/>}/>
+    <Route path='/home' element={<Home/>}/>
+    <Route path='/market' element={<Market/>}/>
+    <Route path='/create' element={<Create/>}/>
+    <Route path='/contact' element={<Contact/>}/>
+    <Route path='/sellerprofile' element={<SellerProfile/>}/>
+    <Route path='/editprofile' element={<EditProfile/>}/>
+    <Route path='/wallet' element={<Wallet/>}/>
+    <Route path='/nftdetails' element={<NftDetails/>}/>
   </Routes>
+  )
 }
 
 export default Routers
