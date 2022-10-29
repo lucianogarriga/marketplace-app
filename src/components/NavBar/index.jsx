@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import { Navbar, Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import CartWidget from '../CartWidget';
 import './navBar.css'
 
 const NavBar = () => {
@@ -12,10 +12,11 @@ const NavBar = () => {
         <Navbar.Brand href="#home">NFT MARKET</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav style={{ textAlign: 'center' }}>
-            <Link to="/">Home</Link> 
-            <Link to="/about">About</Link>
-            <Link to="/wallet">Connect Wallet</Link> 
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link> 
+            <Nav.Link href="#about">About</Nav.Link>
+            <Nav.Link href="#cart" className='d-flex'>Cart<CartWidget/></Nav.Link> 
+            {/* <Nav.Link href="#wallet" className='d-flex' > <Wallet/>Connect Wallet</Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
