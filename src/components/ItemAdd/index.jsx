@@ -1,7 +1,8 @@
 import React from 'react'
 import './itemAdd.css'
 
-export const ItemAdd = () => {
+export const ItemAdd = ({initial, onAdd}) => { 
+
   return (
     <>
     <body>
@@ -23,7 +24,7 @@ export const ItemAdd = () => {
         </div>
         <div className="line"></div>
         <div className='counter'> 
-            <button className='btn-add'>Agregar al carrito</button>
+            <button className='btn-add' onClick={() => onAdd(initial)}>Agregar al carrito</button>
         </div>
   </main>
   </body>
