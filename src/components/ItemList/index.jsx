@@ -1,11 +1,9 @@
 import React from 'react';
 import Item from '../Item';
 
-export const ItemList = () => {
+export const ItemList = ({data = []}) => {
   return (
-    <>
-        <Item/>
-    </>
+        data.map(nftickets => <Item key={nftickets.id} info={nftickets}/>) 
   )
 }
 

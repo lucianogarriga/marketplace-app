@@ -9,7 +9,7 @@ const NavBar = () => {
     <>    
     <Navbar bg="dark" variant={'dark'} sticky='top' expand="lg">
       <Container>
-        <Navbar.Brand href="#home">NFT MARKET</Navbar.Brand>
+        <Navbar.Brand href="#home">ArgenTickets</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
