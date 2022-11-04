@@ -13,7 +13,7 @@ const nftickets = [
 
 //utilizamos destructuring, para evitar llamar los objetos por cada propiedad (props.texto)
 
-export const ItemListContainer = ({texto}) => {
+export const ItemListContainer = () => {
 
     const [data, setData] = useState([]);
 
@@ -33,7 +33,7 @@ export const ItemListContainer = ({texto}) => {
 
   return (
     <>
-        <Title greeting={texto}/>
+        <Title/>
         <ItemAdd initial={1} onAdd={onAdd}/>
         <ItemList data={data}/>
     </>

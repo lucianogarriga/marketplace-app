@@ -17,9 +17,9 @@ export const ItemDetailContainer = () => {
     getData.then(res => setData(res));
   }, [])
 
-  return (
-    <ItemDetail data={data}/>
-  )
+  // return (
+  //   <ItemDetail data={data}/>
+  // )
 }
 
 export default ItemDetailContainer

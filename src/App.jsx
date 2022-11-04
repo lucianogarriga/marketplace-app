@@ -3,15 +3,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar'; 
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
-// import About from './components/About/about';
+import Cart from './components/Cart';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-function App(props) {
-  
+function App() { 
   return(
-    <> 
+    <>
+      <BrowserRouter>
         <NavBar/>  
-        <ItemListContainer texto='TU PROXIMO PASAJE EN UN NFT' className='texto'/>
-        <ItemDetailContainer/>
+        <Routes>
+          <Route path="/" element={<ItemListContainer/>}/>
+          <Route path="/categoria" element={<ItemListContainer/>}/>
+          <Route path="/cart" element={<Cart/>}/>
+          <Route path="/detalle" element={<ItemDetailContainer/>}/>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
