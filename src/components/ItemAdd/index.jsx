@@ -1,5 +1,5 @@
-import React from 'react'
-import './itemAdd.css'
+import React from 'react';
+import './itemAdd.css';
 
 export const ItemAdd = ({initial, onAdd}) => { 
 

@@ -13,7 +13,7 @@ const nftickets = [
 
 //utilizamos destructuring, para evitar llamar los objetos por cada propiedad (props.texto)
 
-export const ItemListContainer = () => {
+export const ItemListContainer = ({texto}) => {
 
     const [data, setData] = useState([]);
 
@@ -24,7 +24,6 @@ export const ItemListContainer = () => {
         }, 2000);
       });
       getData.then(res => setData(res));
-
     }, [])
 
     const onAdd = (quantity) =>{
@@ -33,7 +32,7 @@ export const ItemListContainer = () => {
 
   return (
     <>
-        <Title/>
+        <Title greeting={texto}/>
         <ItemAdd initial={1} onAdd={onAdd}/>
         <ItemList data={data}/>
     </>
