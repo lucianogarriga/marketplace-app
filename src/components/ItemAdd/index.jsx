@@ -1,12 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './itemAdd.css';
 
-export const ItemAdd = ({initial, onAdd}) => { 
+export const ItemAdd = ({initial, stock, onAdd}) => { 
+
+  const [count, setCount] = useState(initial);
+
+  const increase = () =>{
+    setCount(count + 1);
+  } 
 
   return (
     <> 
-        <div className='counter'> 
-            <button className='btn-add' onClick={() => onAdd(initial)}>Agregar al carrito</button>
+        <div className='counter'>  
+            {/* <span style={{color: "white"}}>{count}</span> */}
+            {/* <button disabled={count >= stock} onClick={increase}>+</button> */}
+            <button className='btn-add' onClick={() => onAdd(count)}>Agregar al carrito</button>
         </div>
     </>
   )
