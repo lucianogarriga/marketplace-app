@@ -2,7 +2,7 @@ import React from 'react';
 import './item.css';
 import ItemAdd from '../ItemAdd';
 
-export const Item = ({info}) => {
+export const Item = ({onAdd, info}) => {
   return ( 
     <div className="main-container">
         <div> <img src={info.image} className="image"/> 
@@ -18,7 +18,7 @@ export const Item = ({info}) => {
         </div>
         </div>
         <div className="line"></div>
-        <ItemAdd/> 
+        <ItemAdd initial={1} stock={1} onAdd={onAdd} /> 
   </div> 
   )
 }

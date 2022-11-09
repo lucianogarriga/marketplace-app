@@ -1,9 +1,9 @@
 import React from 'react';
 import Item from '../Item';
 
-export const ItemList = ({data = []}) => {
+export const ItemList = ({onAdd, data = []}) => {
   return (
-        data.map(nftickets => <Item key={nftickets.id} info={nftickets}/>) 
+        data.map(nfticket => <Item key={nfticket.id} info={nfticket} onAdd={onAdd} />) 
   )
 }
 

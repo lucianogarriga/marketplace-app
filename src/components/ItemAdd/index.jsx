@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './itemAdd.css';
 
-export const ItemAdd = ({initial, stock, onAdd}) => { 
+export const ItemAdd = ({initial, onAdd}) => { 
 
   const [count, setCount] = useState(initial);
 

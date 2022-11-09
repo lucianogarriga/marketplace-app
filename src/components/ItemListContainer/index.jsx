@@ -15,16 +15,16 @@ const nftickets = [
 
 export const ItemListContainer = ({texto}) => {
 
-    // const [data, setData] = useState([]);
+    const [data, setData] = useState([]);
 
-    // useEffect(() => {
-    //   const getData = new Promise(resolve =>{
-    //     setTimeout(() => {
-    //       resolve(nftickets);
-    //     }, 2000);
-    //   });
-    //   getData.then(res => setData(res));
-    // }, [])
+    useEffect(() => {
+      const getData = new Promise(resolve =>{
+        setTimeout(() => {
+          resolve(nftickets);
+        }, 2000);
+      });
+      getData.then(res => setData(res));
+    }, [])
 
     const onAdd = (quantity) =>{
         console.log(`Agregaste ${quantity} NFT al carrito`);
@@ -33,8 +33,8 @@ export const ItemListContainer = ({texto}) => {
   return (
     <>
         <Title greeting={texto}/>
-        <ItemAdd initial={1} stock={1} onAdd={onAdd}/>
-        {/* <ItemList data={data}/> */}
+        {/* <ItemAdd initial={1} stock={1} onAdd={onAdd}/> */}
+        <ItemList onAdd={onAdd} data={data}/>
     </>
   )
 }
