@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import './itemListContainer.css'
-import Title from '../Title';
-import ItemAdd from '../ItemAdd';
+import Title from '../Title'; 
 import { useParams } from "react-router-dom";
 import ItemList from '../ItemList';
 
@@ -35,17 +34,12 @@ export const ItemListContainer = ({texto}) => {
 
     }, [categoryId])
 
-    const onAdd = (quantity) =>{
-        console.log(`Agregaste ${quantity} NFT al carrito`);
-    }
-
   return (
     <>
         <Title greeting={texto}/>
-        {/* <ItemAdd initial={1} stock={1} onAdd={onAdd}/> */}
-        <ItemList onAdd={onAdd} data={data}/>
+        <ItemList data={data}/>
     </>
-  )
+  );
 }
 
 export default ItemListContainer; 
