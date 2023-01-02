@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react' 
 
-export const CartWidget = () => {
+export const CartWidget = () => { 
+
   return (
     <div style={{marginLeft: '10px'}}>
         <i className="bi bi-bag"></i>

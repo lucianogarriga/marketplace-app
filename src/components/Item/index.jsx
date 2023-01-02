@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './item.css';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../context/CartContext';
 
 export const Item = ({ info }) => {
+  const nombre = useContext(CartContext);
+  console.log('Item: ', nombre);
+
   return (
 
     <div className="col-md-4">
