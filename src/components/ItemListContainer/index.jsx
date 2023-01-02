@@ -23,15 +23,19 @@ export const ItemListContainer = ({ texto }) => {
     const getData = new Promise(resolve => {
       setTimeout(() => {
         resolve(nftickets);
-      }, 1500);
+      }, 350);
     });
 
     if (categoryId) {
       getData.then(res => setData(res.filter(nfticket => nfticket.category === categoryId)));
     } else {
+      //en el home no detecta ninguna category, por ende muestra todos los objetos
       getData.then(res => setData(res));
     }
-
+    // el useEffect necesita una dependencia dentro de []     
+    // renderiza 1 sola vez, 
+    // cada vez que cambia la categoria [] que vuelva a ejecutar el useEffect
+    // para corroborar si existe la categoria [] y si cambio, que lo filtre de nuevo
   }, [categoryId])
 
   return (

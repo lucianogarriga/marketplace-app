@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import './itemDetailContainer.css'  
-import { useParams } from "react-router-dom"; 
 import ItemDetail from './ItemDetail';
+import { useParams } from "react-router-dom"; 
 
 const nftickets = [
   {id: 1, image: "https://cdn.audleytravel.com/-/-/79/1012143-cafayate-argentina.jpg", title: "Desde Córdoba a CAFAYATE", description: "Aereo - Cordoba/Cafayate - Ida y Vuelta", price: "0.110 ETH", days: "3 days left", category: "tickets"},
@@ -19,7 +19,7 @@ export const ItemDetailContainer = () => {
       const getData = new Promise(resolve =>{
         setTimeout(() => {
           resolve(nftickets);
-        }, 1500);
+        }, 400);
       });
       
         getData.then(res => setData(res.filter(nfticket => nfticket.id === parseInt(detailId))));

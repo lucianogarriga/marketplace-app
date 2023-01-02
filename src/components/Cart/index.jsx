@@ -5,6 +5,7 @@ export const Cart = () => {
   return (
     <div>
       <CartWidget/>
+      <h1>CART</h1>
     </div>
   )
 }
