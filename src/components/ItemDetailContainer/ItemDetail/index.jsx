@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import ItemAdd from '../../Item/ItemAdd';
 import { Link } from 'react-router-dom';
+import {useCartContext} from '../../../context/CartContext';
 
 export const ItemDetail = ({ data }) => {
 
   const [goCart, setGoCart] = useState(false);
+  //Import useCartContext and we use it
+  const {addProduct} = useCartContext();
 
   const onAdd = (quantity) => {
     console.log(`Agregaste ${quantity} NFT al carrito`);
     setGoCart(true);
+    //'data' is the object that the user chose
+    addProduct(data,quantity);
   }
 
   return (

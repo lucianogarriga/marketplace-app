@@ -1,11 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 
 export const CartContext = React.createContext([]);
-console.log('Cart Context: ', CartContext);
+
+//We create our own customized hook for export to ItemDetail
+
+export const useCartContext = () => {
+    useContext(CartContext);
+}
 
 const CartProvider = ({ children }) => {
 
-    // LOGICA PARA EL CARRITO
+    // Logic fot Cart
+    const addProduct = (item, newQuantity) => {
+        const newCart = cart.filter(prod => prod.id !== item.id);
+        newCart.push({...item, quantity: newQuantity});
+        setCart(newCart)
+    }
+
     const [cart, setCart] = useState([]);
 
     //function to clear cart
@@ -22,7 +33,12 @@ const CartProvider = ({ children }) => {
     }
 
     return (
-        <CartContext.Provider value='NFT'>
+        <CartContext.Provider value={{
+            clearCart,
+            isInCart,
+            removeProduct,
+            addProduct
+        }}>
             {children}
         </CartContext.Provider>
     )

@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 
 export const Item = ({ info }) => {
-  const nombre = useContext(CartContext);
-  console.log('Item: ', nombre);
+  
 
   return (
 
