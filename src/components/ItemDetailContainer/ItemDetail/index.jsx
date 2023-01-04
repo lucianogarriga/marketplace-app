@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState} from 'react';
 import ItemAdd from '../../Item/ItemAdd';
 import { Link } from 'react-router-dom';
 import {useCartContext} from '../../../context/CartContext';
@@ -10,10 +10,10 @@ export const ItemDetail = ({ data }) => {
   const {addProduct} = useCartContext();
 
   const onAdd = (quantity) => {
-    console.log(`Agregaste ${quantity} NFT al carrito`);
     setGoCart(true);
     //'data' is the object that the user chose
     addProduct(data,quantity);
+    console.log(`Agregaste ${quantity} NFT al carrito`);
   }
 
   return (
@@ -26,7 +26,7 @@ export const ItemDetail = ({ data }) => {
           <h3 className='display-8 m-3  fw-bold' style={{ textAlign: 'center', color: 'lightgray' }}>{data[0]?.title}</h3>
           <h5 className='m-3 justify-content-justify' style={{ textAlign: 'center', color: 'lightgray' }}> Descripcion: {data[0]?.description}</h5>
           <div style={{ textAlign: 'center' }}>
-            <h5 style={{ color: 'white' }}>Precio: {data[0]?.price}</h5>
+            <h5 style={{ color: 'white' }}>Precio: {data[0]?.price} {data[0]?.coin}</h5>
             {
               goCart
                 ? <Link to='/cart'><button className='btn btn-outline-info'>Terminar compra</button> </Link>

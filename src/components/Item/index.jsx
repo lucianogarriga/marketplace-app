@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import './item.css';
-import { Link } from 'react-router-dom';
-import { CartContext } from '../../context/CartContext';
+import { Link } from 'react-router-dom'; 
 
 export const Item = ({ info }) => {
   
@@ -16,7 +15,7 @@ export const Item = ({ info }) => {
         <p className="card-title m-3 fw-bold">{info.title}</p>
         <div className="details-container">
           <div className="value">
-            <span>{info.price}</span>
+            <span>{info.price + info.coin}</span>
           </div>
           <div className="time">
             <span>{info.days}</span>
