@@ -1,0 +1,14 @@
+.cart_title{
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+    font: 2rem sans-serif; 
+}
+
+.btn{
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
